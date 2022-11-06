@@ -1,0 +1,7 @@
+{
+    "sonarlint.pathToCompileCommands": "${workspaceFolder}/compile_commands.json",
+    "files.associations": {
+        "string.h": "c",
+        "types.h": "c"
+    }
+}
