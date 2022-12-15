@@ -1,0 +1,12 @@
+{
+    "sonarlint.pathToCompileCommands": "${workspaceFolder}/compile_commands.json",
+    "files.associations": {
+        "user.h": "c",
+        "cmath": "c",
+        "exception": "c",
+        "*.tcc": "c",
+        "proc.h": "c",
+        "sysinfo.h": "c",
+        "limits": "c"
+    }
+}
