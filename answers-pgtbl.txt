@@ -1,0 +1,22 @@
+1. freewalk(pagetable_t pagetable)
+{
+  // there are 2^9 = 512 PTEs in a page table.
+  for(int i = 0; i < 512; i++){
+    pte_t pte = pagetable[i];
+    if((pte & PTE_V) && (pte & (PTE_R|PTE_W|PTE_X)) == 0){
+      // this PTE points to a lower-level page table.
+      uint64 child = PTE2PA(pte);
+      freewalk((pagetable_t)child);
+      pagetable[i] = 0;
+    } else if(pte & PTE_V){
+      panic("freewalk: leaf");
+    }
+  }
+  kfree((void*)pagetable);
+}
+
+line 6?
+
+2. Hardware will set the PTE_A after user accessed the page. If OS want to know the page whether be accessed, just read the PTE is OK.
+   Just be sure to clear PTE_A after checking if it is set. Otherwise, it won't be possible to determine if the page was accessed since the 
+   last time pgaccess() was called (i.e., the bit will be set forever).
