@@ -15,7 +15,8 @@
   kfree((void*)pagetable);
 }
 
-line 6?
+line 6? 
+如果 X, W, R 位均为 0 ，则表示这是一个页目录项，包含了下一级页表的物理地址
 
 2. Hardware will set the PTE_A after user accessed the page. If OS want to know the page whether be accessed, just read the PTE is OK.
    Just be sure to clear PTE_A after checking if it is set. Otherwise, it won't be possible to determine if the page was accessed since the 

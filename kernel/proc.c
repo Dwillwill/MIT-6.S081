@@ -133,6 +133,7 @@ found:
     release(&p->lock);
     return 0;
   }
+  // init the usyscall page.
   p->usyspage->pid = p->pid;
 
   // An empty user page table.
