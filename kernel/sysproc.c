@@ -104,7 +104,7 @@ int sys_pgaccess(void) {
     pte = walk(p->pagetable, va, 0);
     if(*pte & PTE_A){
       bitmap = bitmap | (mask << count);
-      *pte=(*pte) & ~(PTE_A);
+      *pte = (*pte) & ~(PTE_A);
     }
     count++;
   }
