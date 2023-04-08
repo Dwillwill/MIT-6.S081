@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "user.h": "c",
+        "proc.h": "c",
+        "defs.h": "c",
+        "file.h": "c",
+        "fcntl.h": "c"
+    },
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/Users/apple/xv6-labs-2021/user",
+            "binaryPath": "/Users/apple/xv6-labs-2021/user/_forktest",
+            "binaryArgs": []
+        }
+    ]
+}
